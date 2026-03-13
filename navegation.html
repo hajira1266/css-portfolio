@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigation Menu Styling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #9370db;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        .box {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        
+        h2 {
+            color: #444;
+            margin: 25px 0 15px 0;
+        }
+        
+        h3 {
+            color: #555;
+            margin: 15px 0 10px 0;
+        }
+        
+        hr {
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        
+        /* Navigation Lists */
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        /* 1. Horizontal Layouts */
+        .h-nav {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .h-nav ul {
+            display: flex;
+        }
+        
+        .h-nav li a {
+            border-radius: 5px;
+        }
+        
+        .h-nav li a:hover {
+            background: #3498db;
+            color: white;
+        }
+        
+        /* 2. Vertical Layouts */
+        .v-nav {
+            background: #f5f5f5;
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+        }
+        
+        .v-nav li a {
+            border-left: 3px solid transparent;
+        }
+        
+        .v-nav li a:hover {
+            background: #e0e0e0;
+            border-left-color: #3498db;
+            padding-left: 20px;
+        }
+        
+        /* 3. Colored Navigation */
+        .c-nav {
+            background: #3498db;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .c-nav ul {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .c-nav li a {
+            color: white;
+            border-radius: 20px;
+        }
+        
+        .c-nav li a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* 4. Hover Effects */
+        .h1 a:hover { background: #3498db; color: white; }
+        .h2 a:hover { transform: scale(1.1); background: #f0f0f0; }
+        .h3 a:hover { transform: translateX(5px); }
+        .h4 a:hover { box-shadow: 0 0 10px #3498db; }
+        
+        /* 5. Active States */
+        .active1 { background: #3498db; color: white; }
+        .active2 { border-left: 4px solid #3498db; background: #f0f0f0; }
+        .active3 { border-bottom: 3px solid #3498db; }
+        .active4 { color: #3498db; font-weight: bold; }
+        
+        /* 6. Dropdown Menu */
+        .dropdown {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .drop-btn {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .drop-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 150px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        
+        .drop-content a {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .drop-content a:hover {
+            background: #3498db;
+            color: white;
+        }
+        
+        .dropdown:hover .drop-content {
+            display: block;
+        }
+        
+        /* 7. Mega Menu */
+        .mega {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .mega-content {
+            display: none;
+            position: absolute;
+            background: white;
+            width: 500px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            margin-top: 5px;
+            left: 0;
+        }
+        
+        .mega-row {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .mega-col h4 {
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
+        .mega-col a {
+            padding: 5px 0;
+        }
+        
+        .mega:hover .mega-content {
+            display: block;
+        }
+        
+        /* 8. Responsive Navigation */
+        .r-nav {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .r-menu {
+            display: flex;
+        }
+        
+        .r-menu a {
+            color: white;
+        }
+        
+        .r-menu a:hover {
+            background: #555;
+            border-radius: 5px;
+        }
+        
+        .menu-btn {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* 9. Transition Effects */
+        .t1 a { transition: 0.1s; }
+        .t2 a { transition: 0.3s; }
+        .t3 a { transition: 0.8s; }
+        
+        .t1 a:hover { background: #3498db; color: white; padding-left: 25px; }
+        .t2 a:hover { background: #3498db; color: white; padding-left: 25px; }
+        .t3 a:hover { background: #3498db; color: white; padding-left: 25px; }
+        
+        /* 10. Tab Navigation */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .tabs a {
+            border: 1px solid #ddd;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+        }
+        
+        .tabs .active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        
+        .tab-content {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+        
+        /* 11. Breadcrumb */
+        .bread {
+            display: flex;
+            background: #f5f5f5;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        
+        .bread li:after {
+            content: '/';
+            margin: 0 10px;
+            color: #999;
+        }
+        
+        .bread li:last-child:after {
+            content: '';
+        }
+        
+        .bread .active {
+            color: #999;
+        }
+        
+        /* 12. Pagination */
+        .pages {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .pages a {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .pages a:hover {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        
+        .pages .active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        
+        .pages .disabled {
+            opacity: 0.5;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        @media (max-width: 600px) {
+            .r-menu {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                margin-top: 10px;
+            }
+            
+            .r-menu.show {
+                display: flex;
+            }
+            
+            .menu-btn {
+                display: block;
+            }
+            
+            .r-nav {
+                flex-wrap: wrap;
+            }
+            
+            .mega-content {
+                width: 300px;
+            }
+            
+            .mega-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Navigation Menu Styling</h1>
+        
+        <!-- 1. Horizontal Layouts -->
+        <h2>1. Horizontal Navigation</h2>
+        <div class="h-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="c-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- 2. Vertical Layouts -->
+        <h2>2. Vertical Navigation</h2>
+        <div class="v-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <!-- 3. Hover Effects -->
+        <h2>3. Hover Effects (Mouse over links)</h2>
+        <div class="row">
+            <div class="col">
+                <h3>Background Change</h3>
+                <ul class="h1">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Scale Effect</h3>
+                <ul class="h2">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Slide Effect</h3>
+                <ul class="h3">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Glow Effect</h3>
+                <ul class="h4">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 4. Active States -->
+        <h2>4. Active States</h2>
+        <div class="row">
+            <div class="col">
+                <h3>Background Active</h3>
+                <ul>
+                    <li><a href="#" class="active1">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Left Border Active</h3>
+                <ul>
+                    <li><a href="#" class="active2">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Bottom Border Active</h3>
+                <ul>
+                    <li><a href="#" class="active3">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Colored Text Active</h3>
+                <ul>
+                    <li><a href="#" class="active4">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 5. Dropdown Menu -->
+        <h2>5. Dropdown Menu</h2>
+        <div class="row">
+            <div class="col">
+                <h3>Basic Dropdown</h3>
+                <div class="dropdown">
+                    <button class="drop-btn">Products ▼</button>
+                    <div class="drop-content">
+                        <a href="#">Electronics</a>
+                        <a href="#">Clothing</a>
+                        <a href="#">Books</a>
+                        <a href="#">Sports</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <h3>Mega Menu</h3>
+                <div class="mega">
+                    <button class="drop-btn">Categories ▼</button>
+                    <div class="mega-content">
+                        <div class="mega-row">
+                            <div class="mega-col">
+                                <h4>Electronics</h4>
+                                <a href="#">Phones</a>
+                                <a href="#">Laptops</a>
+                                <a href="#">Tablets</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Clothing</h4>
+                                <a href="#">Men</a>
+                                <a href="#">Women</a>
+                                <a href="#">Kids</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Books</h4>
+                                <a href="#">Fiction</a>
+                                <a href="#">Non-Fiction</a>
+                                <a href="#">Educational</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 6. Responsive Navigation -->
+        <h2>6. Responsive Navigation (Resize browser)</h2>
+        <div class="r-nav">
+            <div class="logo">MySite</div>
+            <div class="menu-btn" onclick="this.nextElementSibling.classList.toggle('show')">☰</div>
+            <div class="r-menu">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        
+        <!-- 7. Transition Effects -->
+        <h2>7. Transition Effects</h2>
+        <div class="row">
+            <div class="col">
+                <h3>Fast (0.1s)</h3>
+                <ul class="t1">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Medium (0.3s)</h3>
+                <ul class="t2">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Slow (0.8s)</h3>
+                <ul class="t3">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 8. Tab Navigation -->
+        <h2>8. Tab Navigation</h2>
+        <div class="tabs">
+            <a href="#" class="active">Overview</a>
+            <a href="#">Features</a>
+            <a href="#">Specs</a>
+            <a href="#">Reviews</a>
+        </div>
+        <div class="tab-content">
+            <p>This is the tab content area. Click on tabs to see active state.</p>
+        </div>
+        
+        <!-- 9. Breadcrumb -->
+        <h2>9. Breadcrumb Navigation</h2>
+        <ul class="bread">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li class="active">Phones</li>
+        </ul>
+        
+        <!-- 10. Pagination -->
+        <h2>10. Pagination</h2>
+        <div class="pages">
+            <a href="#" class="disabled">«</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">»</a>
+        </div>
+        
+        <!-- Summary -->
+        <hr>
+        <div style="background:#f5f5f5; padding:15px; border-radius:5px;">
+            <h3>Summary:</h3>
+            <ul style="margin-left:30px;">
+                <li>Horizontal & Vertical layouts</li>
+                <li>4 hover effects</li>
+                <li>4 active states</li>
+                <li>Dropdown & Mega menu</li>
+                <li>Responsive navigation</li>
+                <li>3 transition speeds</li>
+                <li>Tabs, Breadcrumb & Pagination</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Simple JavaScript for responsive menu
+        document.querySelector('.menu-btn').addEventListener('click', function() {
+            this.nextElementSibling.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

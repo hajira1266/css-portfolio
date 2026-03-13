@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced CSS Effects Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #1a1a2e;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        .box {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #444;
+            margin: 30px 0 15px 0;
+            border-bottom: 2px solid #9370db;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            color: #555;
+            margin: 15px 0 10px 0;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .card {
+            width: 220px;
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        /* 1. Gradient Text Effects */
+        .grad1 {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(45deg, red, blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+        }
+        
+        .grad2 {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(135deg, purple, pink, orange);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+        }
+        
+        .grad3 {
+            font-size: 32px;
+            font-weight: bold;
+            background: radial-gradient(circle, red, yellow, green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+        }
+        
+        /* 2. Custom Checkboxes */
+        .check-item {
+            margin: 15px 0;
+        }
+        
+        .check-item input[type="checkbox"] {
+            display: none;
+        }
+        
+        .check-item label {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .check-item input[type="checkbox"]:checked + label {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        /* Custom Radio */
+        .radio-item {
+            margin: 15px 0;
+        }
+        
+        .radio-item input[type="radio"] {
+            display: none;
+        }
+        
+        .radio-item label {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #e0e0e0;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .radio-item input[type="radio"]:checked + label {
+            background: #2196F3;
+            color: white;
+        }
+        
+        /* 3. Loading Animations */
+        .loader1 {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        .loader2 {
+            width: 50px;
+            height: 50px;
+            background: #3498db;
+            border-radius: 50%;
+            animation: pulse 1s ease infinite;
+            margin: 0 auto 10px;
+        }
+        
+        .loader3 {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+        }
+        
+        .loader3 div {
+            width: 15px;
+            height: 15px;
+            background: #3498db;
+            border-radius: 50%;
+            animation: bounce 0.6s ease infinite;
+        }
+        
+        .loader3 div:nth-child(2) { animation-delay: 0.2s; }
+        .loader3 div:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        /* 4. Text Clipping with Background Images */
+        .clip-text {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .clip1 {
+            background-image: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400');
+            background-size: cover;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .clip2 {
+            background-image: url('https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=400');
+            background-size: cover;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .clip3 {
+            background: linear-gradient(45deg, red, blue, green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* 5. Complex Shadow Effects */
+        .shadow-box {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            margin: 20px auto;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .shadow1 {
+            box-shadow: 0 0 20px #3498db;
+        }
+        
+        .shadow2 {
+            box-shadow: 5px 5px 0 #333, 10px 10px 0 #666, 15px 15px 0 #999;
+        }
+        
+        .shadow3 {
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
+        }
+        
+        .shadow4 {
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
+        }
+        
+        .shadow4:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 40px -10px rgba(0,0,0,0.7);
+        }
+        
+        .shadow5 {
+            box-shadow: 
+                -10px -10px 20px #ff6b6b,
+                10px 10px 20px #4ecdc4;
+        }
+        
+        .shadow6 {
+            box-shadow: 0 0 0 5px #3498db, 0 0 0 10px #e74c3c, 0 0 0 15px #f1c40f;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Advanced CSS Effects Showcase - hajira shams</h1>
+        
+        <!-- 1. Gradient Text Effects -->
+        <h2>1. Gradient Text Effects</h2>
+        <div class="row">
+            <div class="card">
+                <div class="grad1">Hello</div>
+                <p>Linear Gradient (red to blue)</p>
+            </div>
+            <div class="card">
+                <div class="grad2">CSS</div>
+                <p>Multi-color Gradient</p>
+            </div>
+            <div class="card">
+                <div class="grad3">World</div>
+                <p>Radial Gradient</p>
+            </div>
+        </div>
+        
+        <!-- 2. Custom Checkboxes and Radio Buttons -->
+        <h2>2. Custom Checkboxes & Radio Buttons</h2>
+        <div class="row">
+            <div class="card">
+                <h3>Checkboxes</h3>
+                <div class="check-item">
+                    <input type="checkbox" id="check1" checked>
+                    <label for="check1">Option 1</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="check2">
+                    <label for="check2">Option 2</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="check3">
+                    <label for="check3">Option 3</label>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Radio Buttons</h3>
+                <div class="radio-item">
+                    <input type="radio" name="radio" id="radio1" checked>
+                    <label for="radio1">Male</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" name="radio" id="radio2">
+                    <label for="radio2">Female</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" name="radio" id="radio3">
+                    <label for="radio3">Other</label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 3. Loading Animations -->
+        <h2>3. Loading Animations</h2>
+        <div class="row">
+            <div class="card">
+                <div class="loader1"></div>
+                <p>Spinner</p>
+            </div>
+            <div class="card">
+                <div class="loader2"></div>
+                <p>Pulse</p>
+            </div>
+            <div class="card">
+                <div class="loader3">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <p>Bouncing Dots</p>
+            </div>
+        </div>
+        
+        <!-- 4. Text Clipping with Background Images -->
+        <h2>4. Text Clipping</h2>
+        <div class="row">
+            <div class="card">
+                <div class="clip-text clip1">MOUNTAIN</div>
+                <p>Image: Mountain</p>
+            </div>
+            <div class="card">
+                <div class="clip-text clip2">OCEAN</div>
+                <p>Image: Ocean</p>
+            </div>
+            <div class="card">
+                <div class="clip-text clip3">GRADIENT</div>
+                <p>Gradient Background</p>
+            </div>
+        </div>
+        
+        <!-- 5. Complex Shadow Effects -->
+        <h2>5. Complex Shadow Effects</h2>
+        <div class="row">
+            <div class="card">
+                <div class="shadow-box shadow1">NEON</div>
+                <p>Neon Glow</p>
+            </div>
+            <div class="card">
+                <div class="shadow-box shadow2">LAYER</div>
+                <p>Layered Shadow</p>
+            </div>
+            <div class="card">
+                <div class="shadow-box shadow3">INSET</div>
+                <p>Inner Shadow</p>
+            </div>
+            <div class="card">
+                <div class="shadow-box shadow4">FLOAT</div>
+                <p>Floating Shadow</p>
+            </div>
+            <div class="card">
+                <div class="shadow-box shadow5">COLOR</div>
+                <p>Colorful Shadow</p>
+            </div>
+            <div class="card">
+                <div class="shadow-box shadow6">MULTI</div>
+                <p>Multiple Borders</p>
+            </div>
+        </div>
+        
+        <!-- Bonus: Combined Effects -->
+        <h2>Bonus: Combined Effects</h2>
+        <div class="row">
+            <div class="card" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+                <div class="grad2" style="font-size: 24px;">COMBINED</div>
+                <div class="loader1" style="border-top-color: white;"></div>
+                <p>Gradient + Loading</p>
+            </div>
+            <div class="card">
+                <div class="clip-text clip1" style="font-size: 30px;">CLIP</div>
+                <div class="shadow-box shadow1" style="width: 100px; height: 100px;">SHADOW</div>
+                <p>Clip + Shadow</p>
+            </div>
+        </div>
+        
+        <!-- Summary -->
+        <div style="background:#f5f5f5; padding:15px; margin-top:30px; border-radius:5px;">
+            <h3>Summary:</h3>
+            <ul style="margin-left:30px;">
+                <li>3 Gradient Text Effects</li>
+                <li>Custom Checkboxes & Radio Buttons</li>
+                <li>3 Loading Animations (Spinner, Pulse, Dots)</li>
+                <li>3 Text Clipping Examples</li>
+                <li>6 Complex Shadow Effects</li>
+                <li>Bonus Combined Effects</li>
+            </ul>
+            <p style="margin-top:10px;">Created by: <strong>hajira sahms</strong></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography Showcase</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e6e6fa;
+            font-family: Arial, sans-serif;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px gray;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #6a5acd;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 8px;
+        }
+
+        /* Google Fonts */
+        .font-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .font-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px lightgray;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Font Sizes */
+        .size-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .size-item {
+            flex: 1;
+            min-width: 150px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px lightgray;
+            text-align: center;
+        }
+
+        .px {
+            font-size: 24px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .em {
+            font-size: 2em;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .rem {
+            font-size: 1.5rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .percent {
+            font-size: 150%;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .vw {
+            font-size: 2vw;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .size-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Text Alignment */
+        .align-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .align-box {
+            padding: 15px;
+            background: #e0e0ff;
+            border-radius: 6px;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .justify {
+            text-align: justify;
+        }
+
+        /* Text Decoration */
+        .deco-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .deco-box {
+            padding: 15px;
+            background: #ffe4e1;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .under {
+            text-decoration: underline;
+        }
+
+        .over {
+            text-decoration: overline;
+        }
+
+        .line {
+            text-decoration: line-through;
+        }
+
+        .upper {
+            text-transform: uppercase;
+        }
+
+        .lower {
+            text-transform: lowercase;
+        }
+
+        .capital {
+            text-transform: capitalize;
+        }
+
+        /* Text Shadow */
+        .shadow-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .shadow-box {
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 6px;
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
+
+        .soft {
+            text-shadow: 2px 2px 4px gray;
+        }
+
+        .hard {
+            text-shadow: 3px 3px 0 red;
+        }
+
+        .multi {
+            text-shadow: 2px 2px 0 blue, 4px 4px 0 green;
+        }
+
+        .glow {
+            text-shadow: 0 0 10px blue;
+            background: #333;
+            color: white;
+        }
+
+        .three-d {
+            text-shadow: 1px 1px 0 gray, 2px 2px 0 gray, 3px 3px 0 gray;
+        }
+
+        .note {
+            background: #fffacd;
+            border-left: 4px solid #ffb347;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        ul {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Typography Showcase</h1>
+        <p class="subtitle">CSS Typography Examples</p>
+
+        <!-- 1. Google Fonts -->
+        <div class="section">
+            <h2>1. Google Fonts</h2>
+            <div class="font-row">
+                <div class="font-box">
+                    <h3>Playfair Display</h3>
+                    <p class="playfair">The quick brown fox jumps over the lazy dog.</p>
+                </div>
+                <div class="font-box">
+                    <h3>Roboto</h3>
+                    <p class="roboto">The quick brown fox jumps over the lazy dog.</p>
+                </div>
+                <div class="font-box">
+                    <h3>Montserrat</h3>
+                    <p class="montserrat">The quick brown fox jumps over the lazy dog.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Font Sizes with Different Units -->
+        <div class="section">
+            <h2>2. Font Sizes with Different Units</h2>
+            <div class="size-row">
+                <div class="size-item">
+                    <p class="px">Pixel (24px)</p>
+                    <p class="size-label">PX - Fixed</p>
+                </div>
+                <div class="size-item">
+                    <p class="em">EM (2em)</p>
+                    <p class="size-label">EM - Relative to parent</p>
+                </div>
+                <div class="size-item">
+                    <p class="rem">REM (1.5rem)</p>
+                    <p class="size-label">REM - Relative to root</p>
+                </div>
+                <div class="size-item">
+                    <p class="percent">Percentage (150%)</p>
+                    <p class="size-label">% - Percentage</p>
+                </div>
+                <div class="size-item">
+                    <p class="vw">Viewport (2vw)</p>
+                    <p class="size-label">VW - Viewport width</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Text Alignment -->
+        <div class="section">
+            <h2>3. Text Alignment</h2>
+            <div class="align-row">
+                <div class="align-box left">
+                    <h3>Left</h3>
+                    <p>This text is aligned to the left side.</p>
+                </div>
+                <div class="align-box center">
+                    <h3>Center</h3>
+                    <p>This text is centered.</p>
+                </div>
+                <div class="align-box right">
+                    <h3>Right</h3>
+                    <p>This text is aligned right.</p>
+                </div>
+                <div class="align-box justify">
+                    <h3>Justify</h3>
+                    <p>This text is justified. Both left and right edges are straight.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Text Decoration and Transformation -->
+        <div class="section">
+            <h2>4. Text Decoration & Transformation</h2>
+            <div class="deco-row">
+                <div class="deco-box under">Underline</div>
+                <div class="deco-box over">Overline</div>
+                <div class="deco-box line">Line Through</div>
+                <div class="deco-box upper">uppercase</div>
+                <div class="deco-box lower">LOWERCASE</div>
+                <div class="deco-box capital">capitalize text</div>
+            </div>
+        </div>
+
+        <!-- 5. Text Shadow Effects -->
+        <div class="section">
+            <h2>5. Text Shadow Effects</h2>
+            <div class="shadow-row">
+                <div class="shadow-box soft">Soft</div>
+                <div class="shadow-box hard">Hard</div>
+                <div class="shadow-box multi">Multi</div>
+                <div class="shadow-box glow">Glow</div>
+                <div class="shadow-box three-d">3D</div>
+            </div>
+        </div>
+
+        <!-- Summary Note -->
+        <div class="note">
+            <h3>Summary:</h3>
+            <ul>
+                <li>3 Google Fonts used</li>
+                <li>5 different font size units (px, em, rem, %, vw)</li>
+                <li>4 text alignment examples</li>
+                <li>6 text decoration/transformation examples</li>
+                <li>5 text shadow effects</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

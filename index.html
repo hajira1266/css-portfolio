@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors Practice</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        .heading {
+            color: blue;
+            text-align: center;
+        }
+        
+        .para {
+            font-size: 16px;
+            color: #333;
+        }
+        
+        #main {
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+        }
+        
+        h1, h2, h3 {
+            color: navy;
+        }
+        
+        /* Attribute Selectors */
+        [type] {
+            border: 1px solid black;
+        }
+        
+        [type="text"] {
+            background-color: #f9f9f9;
+        }
+        
+        [href^="https"] {
+            color: green;
+        }
+        
+        /* Combinators */
+        div p {
+            color: gray;
+        }
+        
+        div > p {
+            font-weight: bold;
+        }
+        
+        h2 + p {
+            font-style: italic;
+        }
+        
+        h2 ~ p {
+            font-size: 14px;
+        }
+        
+        /* Pseudo-classes */
+        a:hover {
+            color: red;
+        }
+        
+        li:first-child {
+            background-color: lightblue;
+        }
+        
+        li:last-child {
+            background-color: lightgreen;
+        }
+        
+        input:focus {
+            background-color: yellow;
+        }
+        
+        button:active {
+            background-color: darkblue;
+        }
+        
+        /* Pseudo-elements */
+        p::first-line {
+            font-weight: bold;
+        }
+        
+        p::first-letter {
+            font-size: 25px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1 class="heading">CSS Selectors Practice</h1>
+        <p class="para">This is a paragraph with class selector.</p>
+        
+        <h2>Basic Selectors</h2>
+        <p>This shows element, class, and ID selectors.</p>
+        <p>Another paragraph for sibling selectors.</p>
+        
+        <h3>Attribute Selectors Example</h3>
+        <input type="text" placeholder="Text input">
+        <input type="password" placeholder="Password">
+        <br><br>
+        <a href="https://example.com">Secure Link</a>
+        <a href="http://example.com">Normal Link</a>
+        
+        <h2>Combinators Demo</h2>
+        <div>
+            <p>This is inside div (descendant).</p>
+            <p>This is also inside div.</p>
+            <section>
+                <p>This is inside section inside div.</p>
+            </section>
+        </div>
+        
+        <h2>Lists with Pseudo-classes</h2>
+        <ul>
+            <li>First item (first-child)</li>
+            <li>Second item</li>
+            <li>Third item</li>
+            <li>Last item (last-child)</li>
+        </ul>
+        
+        <h2>Form Elements</h2>
+        <form>
+            <label>Name:</label>
+            <input type="text"><br><br>
+            <label>Email:</label>
+            <input type="email"><br><br>
+            <button type="button">Click Me</button>
+        </form>
+        
+        <h2>Pseudo-elements Demo</h2>
+        <p>This paragraph shows first-line and first-letter effects. The first line is bold and first letter is big and red.</p>
+    </div>
+</body>
+</html>

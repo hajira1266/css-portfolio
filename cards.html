@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Card Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #9370db;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        .box {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #444;
+            margin: 20px 0 10px 0;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        /* Basic Card */
+        .card {
+            width: 220px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        
+        .card img {
+            width: 100%;
+            height: 140px;
+        }
+        
+        .card .info {
+            padding: 12px;
+        }
+        
+        .card h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .card p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .card .bottom {
+            padding: 12px;
+            background: #f5f5f5;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* Borders */
+        .border1 { border: 2px solid #3498db; }
+        .border2 { border: 2px solid #e74c3c; }
+        .border3 { border: 2px dashed #27ae60; }
+        .border4 { border: 3px dotted #f39c12; }
+        
+        /* Shadows */
+        .shadow1 { box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .shadow2 { box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .shadow3 { box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+        .shadow4 { box-shadow: 5px 5px 0 #333; }
+        
+        /* Hover Effects */
+        .hover1:hover { transform: scale(1.05); }
+        .hover2:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .hover3:hover { transform: rotate(2deg); }
+        .hover4:hover { box-shadow: 0 0 20px #3498db; }
+        
+        /* Buttons */
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        
+        .btn1 { background: #3498db; color: white; }
+        .btn1:hover { background: #2980b9; }
+        
+        .btn2 { background: #27ae60; color: white; }
+        .btn2:hover { background: #219a52; }
+        
+        .btn3 { background: white; color: #3498db; border: 1px solid #3498db; }
+        .btn3:hover { background: #3498db; color: white; }
+        
+        .full-btn { width: 100%; }
+        
+        .price { color: #e74c3c; font-weight: bold; font-size: 18px; }
+        .stars { color: #f39c12; margin: 5px 0; }
+        .tag { background: #3498db; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; display: inline-block; margin-right: 5px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Card Component Design</h1>
+        
+        <!-- 1. Borders -->
+        <h2>1. Different Borders</h2>
+        <div class="row">
+            <div class="card border1">
+                <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Blue Border</h3>
+                    <p>Card with blue border</p>
+                </div>
+            </div>
+            <div class="card border2">
+                <img src="https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Red Border</h3>
+                    <p>Card with red border</p>
+                </div>
+            </div>
+            <div class="card border3">
+                <img src="https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Dashed Border</h3>
+                    <p>Card with green dashed border</p>
+                </div>
+            </div>
+            <div class="card border4">
+                <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Dotted Border</h3>
+                    <p>Card with yellow dotted border</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 2. Shadows -->
+        <h2>2. Shadow Effects</h2>
+        <div class="row">
+            <div class="card shadow1">
+                <img src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Light Shadow</h3>
+                    <p>Soft shadow effect</p>
+                </div>
+            </div>
+            <div class="card shadow2">
+                <img src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Medium Shadow</h3>
+                    <p>Medium shadow depth</p>
+                </div>
+            </div>
+            <div class="card shadow3">
+                <img src="https://images.pexels.com/photos/1266810/pexels-photo-1266810.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Heavy Shadow</h3>
+                    <p>Deep shadow effect</p>
+                </div>
+            </div>
+            <div class="card shadow4">
+                <img src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Hard Shadow</h3>
+                    <p>Retro hard shadow</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 3. Hover Effects -->
+        <h2>3. Hover Effects (Mouse over cards)</h2>
+        <div class="row">
+            <div class="card hover1">
+                <img src="https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Scale</h3>
+                    <p>Becomes bigger on hover</p>
+                </div>
+            </div>
+            <div class="card hover2">
+                <img src="https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Lift</h3>
+                    <p>Lifts up on hover</p>
+                </div>
+            </div>
+            <div class="card hover3">
+                <img src="https://images.pexels.com/photos/1028225/pexels-photo-1028225.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Rotate</h3>
+                    <p>Rotates on hover</p>
+                </div>
+            </div>
+            <div class="card hover4">
+                <img src="https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Glow</h3>
+                    <p>Glows on hover</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 4. Image & Text Content -->
+        <h2>4. Image & Text Content</h2>
+        <div class="row">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1640775/pexels-photo-1640775.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Product Name</h3>
+                    <div class="stars">★★★★☆</div>
+                    <p>Great product with amazing features</p>
+                    <span class="tag">New</span>
+                    <span class="tag">Sale</span>
+                    <div class="price">$49.99</div>
+                </div>
+            </div>
+            <div class="card" style="text-align: center;">
+    <img src="HAJIRA (2).jpg.jpeg" alt="HAJIRA SHAMS" style="width:100px; height:100px; border-radius:50%; margin:15px auto 0; display:block;">
+    <div class="info">
+        <h3>HAJIRA SHAMS</h3>
+        <p>Web Developer</p>
+        <div class="stars">★★★★★</div>
+    </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3>Web Service</h3>
+                    <p>Professional web development for your business</p>
+                    <div class="price">$299</div>
+                </div>
+                <img src="https://images.pexels.com/photos/1032651/pexels-photo-1032651.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+            </div>
+        </div>
+        
+        <!-- 5. Call-to-Action Buttons -->
+        <h2>5. Call-to-Action Buttons</h2>
+        <div class="row">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/417172/pexels-photo-417172.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Product 1</h3>
+                    <p>Amazing features</p>
+                </div>
+                <div class="bottom">
+                    <button class="btn1">Buy Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1366920/pexels-photo-1366920.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Product 2</h3>
+                    <p>Limited offer</p>
+                </div>
+                <div class="bottom">
+                    <button class="btn2">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/2387874/pexels-photo-2387874.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Product 3</h3>
+                    <p>Premium quality</p>
+                </div>
+                <div class="bottom">
+                    <button class="btn3">Details</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1266811/pexels-photo-1266811.jpeg?auto=compress&cs=tinysrgb&w=250" alt="img">
+                <div class="info">
+                    <h3>Product 4</h3>
+                    <p>Best seller</p>
+                </div>
+                <div class="bottom">
+                    <button class="btn1 full-btn">Learn More</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Real Product Cards -->
+        <h2>Product Cards</h2>
+        <div class="row">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/247598/pexels-photo-247598.jpeg?auto=compress&cs=tinysrgb&w=250" alt="headphones">
+                <div class="info">
+                    <h3>Wireless Headphones</h3>
+                    <div class="stars">★★★★☆ (120)</div>
+                    <p>Noise cancellation, great sound</p>
+                    <div class="price">$89.99</div>
+                </div>
+                <div class="bottom">
+                    <button class="btn1 full-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="info">
+                    <h3>Web Development</h3>
+                    <p>Professional services</p>
+                    <div class="price">$599</div>
+                </div>
+                <div class="bottom">
+                    <button class="btn2">Get Quote</button>
+                </div>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="info">
+                    <h3>Pro Plan</h3>
+                    <p>For professionals</p>
+                    <div class="price">$29/mo</div>
+                    <ul style="text-align:left; margin-left:30px;">
+                        <li>10 Projects</li>
+                        <li>50GB Storage</li>
+                        <li>Priority Support</li>
+                    </ul>
+                </div>
+                <div class="bottom">
+                    <button class="btn1 full-btn">Choose Plan</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1619318/pexels-photo-1619318.jpeg?auto=compress&cs=tinysrgb&w=250" alt="blog">
+                <div class="info">
+                    <h3>CSS Tips</h3>
+                    <p style="color:#999;">March 13, 2026</p>
+                    <p>Learn CSS techniques...</p>
+                </div>
+                <div class="bottom">
+                    <button class="btn3 full-btn">Read More</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Summary -->
+        <div style="background:#f5f5f5; padding:15px; margin-top:30px; border-radius:5px;">
+            <h3>Summary:</h3>
+            <ul style="margin-left:30px;">
+                <li>4 border styles</li>
+                <li>4 shadow effects</li>
+                <li>4 hover effects</li>
+                <li>3 image/text layouts</li>
+                <li>3 button styles</li>
+                <li>4 product cards</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

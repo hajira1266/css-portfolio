@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9370db;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px gray;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #9370db;
+            padding-bottom: 8px;
+        }
+
+        .box-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .box {
+            width: 180px;
+            height: 150px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px lightgray;
+        }
+
+        .caption {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* 1. Solid Colors */
+        .solid1 {
+            background-color: #ff6b6b;
+        }
+
+        .solid2 {
+            background-color: #4ecdc4;
+        }
+
+        .solid3 {
+            background-color: #45b7d1;
+        }
+
+        .solid4 {
+            background-color: #96ceb4;
+        }
+
+        .solid5 {
+            background-color: #ffeaa7;
+        }
+
+        /* 2. Image Backgrounds with Repeat Patterns */
+        .pattern1 {
+            background-image: url('https://www.w3schools.com/css/pattern.png');
+            background-repeat: repeat;
+        }
+
+        .pattern2 {
+            background-image: url('https://www.w3schools.com/css/pattern.png');
+            background-repeat: repeat-x;
+        }
+
+        .pattern3 {
+            background-image: url('https://www.w3schools.com/css/pattern.png');
+            background-repeat: repeat-y;
+        }
+
+        .pattern4 {
+            background-image: url('https://www.w3schools.com/css/img_lights.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* 3. Linear Gradients */
+        .linear1 {
+            background: linear-gradient(red, yellow);
+        }
+
+        .linear2 {
+            background: linear-gradient(to right, blue, green);
+        }
+
+        .linear3 {
+            background: linear-gradient(45deg, purple, pink);
+        }
+
+        /* 4. Radial Gradients */
+        .radial1 {
+            background: radial-gradient(red, yellow);
+        }
+
+        .radial2 {
+            background: radial-gradient(circle, blue, green);
+        }
+
+        /* 5. Multiple Layers */
+        .multiple1 {
+            background: linear-gradient(red, blue), url('https://www.w3schools.com/css/img_lights.jpg');
+            background-size: cover, cover;
+        }
+
+        .multiple2 {
+            background: radial-gradient(red, yellow), linear-gradient(blue, green);
+            background-blend-mode: overlay;
+        }
+
+        /* 6. Blend Modes */
+        .blend1 {
+            background: linear-gradient(red, blue), url('https://www.w3schools.com/css/img_lights.jpg');
+            background-blend-mode: multiply;
+            background-size: cover;
+        }
+
+        .blend2 {
+            background: linear-gradient(blue, green), url('https://www.w3schools.com/css/img_lights.jpg');
+            background-blend-mode: screen;
+            background-size: cover;
+        }
+
+        .blend3 {
+            background: linear-gradient(purple, pink), url('https://www.w3schools.com/css/img_lights.jpg');
+            background-blend-mode: overlay;
+            background-size: cover;
+        }
+
+        .item {
+            text-align: center;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Background Gallery</h1>
+        <p class="subtitle">CSS Background Properties Examples</p>
+
+        <!-- 1. Solid Color Backgrounds -->
+        <div class="section">
+            <h2>1. Solid Color Backgrounds</h2>
+            <div class="box-row">
+                <div class="item">
+                    <div class="box solid1"></div>
+                    <p class="caption">Red</p>
+                </div>
+                <div class="item">
+                    <div class="box solid2"></div>
+                    <p class="caption">Turquoise</p>
+                </div>
+                <div class="item">
+                    <div class="box solid3"></div>
+                    <p class="caption">Sky Blue</p>
+                </div>
+                <div class="item">
+                    <div class="box solid4"></div>
+                    <p class="caption">Sage Green</p>
+                </div>
+                <div class="item">
+                    <div class="box solid5"></div>
+                    <p class="caption">Cream Yellow</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Image Backgrounds with Repeat Patterns -->
+        <div class="section">
+            <h2>2. Image Backgrounds & Repeat Patterns</h2>
+            <div class="box-row">
+                <div class="item">
+                    <div class="box pattern1"></div>
+                    <p class="caption">Repeat (default)</p>
+                </div>
+                <div class="item">
+                    <div class="box pattern2"></div>
+                    <p class="caption">Repeat X</p>
+                </div>
+                <div class="item">
+                    <div class="box pattern3"></div>
+                    <p class="caption">Repeat Y</p>
+                </div>
+                <div class="item">
+                    <div class="box pattern4"></div>
+                    <p class="caption">No Repeat</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Linear Gradients -->
+        <div class="section">
+            <h2>3. Linear Gradients</h2>
+            <div class="box-row">
+                <div class="item">
+                    <div class="box linear1"></div>
+                    <p class="caption">Red to Yellow</p>
+                </div>
+                <div class="item">
+                    <div class="box linear2"></div>
+                    <p class="caption">Left to Right</p>
+                </div>
+                <div class="item">
+                    <div class="box linear3"></div>
+                    <p class="caption">45 degrees</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Radial Gradients -->
+        <div class="section">
+            <h2>4. Radial Gradients</h2>
+            <div class="box-row">
+                <div class="item">
+                    <div class="box radial1"></div>
+                    <p class="caption">Radial Red-Yellow</p>
+                </div>
+                <div class="item">
+                    <div class="box radial2"></div>
+                    <p class="caption">Radial Circle</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Multiple Background Layers -->
+        <div class="section">
+            <h2>5. Multiple Background Layers</h2>
+            <div class="box-row">
+                <div class="item">
+                    <div class="box multiple1"></div>
+                    <p class="caption">Gradient + Image</p>
+                </div>
+                <div class="item">
+                    <div class="box multiple2"></div>
+                    <p class="caption">2 Gradients</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Background Blend Modes -->
+        <div class="section">
+            <h2>6. Background Blend Modes</h2>
+            <div class="box-row">
+                <div class="item">
+                    <div class="box blend1"></div>
+                    <p class="caption">Multiply</p>
+                </div>
+                <div class="item">
+                    <div class="box blend2"></div>
+                    <p class="caption">Screen</p>
+                </div>
+                <div class="item">
+                    <div class="box blend3"></div>
+                    <p class="caption">Overlay</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="section">
+            <h2>Summary</h2>
+            <p>This page shows:</p>
+            <ul style="margin-left: 30px;">
+                <li>5 Solid Colors</li>
+                <li>4 Image backgrounds with different repeats</li>
+                <li>3 Linear gradients</li>
+                <li>2 Radial gradients</li>
+                <li>2 Multiple layers</li>
+                <li>3 Blend modes</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

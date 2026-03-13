@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Styling - Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #9370db;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        .main-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .section h2 {
+            margin-bottom: 20px;
+            color: #444;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* 1. Custom Input Field Styling */
+        .input-style {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .input-style:focus {
+            border-color: #3498db;
+            outline: none;
+            background-color: #f0f8ff;
+        }
+        
+        /* Underline Input */
+        .input-underline {
+            width: 100%;
+            padding: 8px 0;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            font-size: 16px;
+        }
+        
+        .input-underline:focus {
+            outline: none;
+            border-bottom-color: #3498db;
+        }
+        
+        /* Icon Input */
+        .icon-input {
+            position: relative;
+        }
+        
+        .icon-input input {
+            width: 100%;
+            padding: 10px 10px 10px 35px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .icon-input span {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: #666;
+        }
+        
+        /* 2. Focus States */
+        .focus-glow:focus {
+            outline: none;
+            box-shadow: 0 0 8px #3498db;
+        }
+        
+        .focus-scale:focus {
+            outline: none;
+            transform: scale(1.02);
+            border-color: #3498db;
+        }
+        
+        .focus-bg:focus {
+            outline: none;
+            background-color: #e6f3ff;
+            border-color: #3498db;
+        }
+        
+        /* 3. Styled Buttons and Dropdowns */
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            margin-right: 10px;
+        }
+        
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-success {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #27ae60;
+        }
+        
+        .btn-reset {
+            background-color: #95a5a6;
+            color: white;
+        }
+        
+        .btn-reset:hover {
+            background-color: #7f8c8d;
+        }
+        
+        /* Dropdown */
+        .styled-select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .styled-select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        /* 4. Error State Styling */
+        .input-error {
+            border-color: #e74c3c !important;
+            background-color: #fdeaea;
+        }
+        
+        .error-msg {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .error-box {
+            background-color: #fdeaea;
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #c0392b;
+        }
+        
+        /* 5. Success Confirmation Styles */
+        .input-success {
+            border-color: #2ecc71 !important;
+            background-color: #e8f8f0;
+        }
+        
+        .success-msg {
+            color: #2ecc71;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .success-box {
+            background-color: #e8f8f0;
+            border-left: 4px solid #2ecc71;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #27ae60;
+        }
+        
+        .confirmation {
+            background-color: #2ecc71;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .confirmation h3 {
+            margin-bottom: 10px;
+        }
+        
+        .row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .col {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        hr {
+            margin: 20px 0;
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-box">
+        <h1>Form Styling - Registration Form</h1>
+        
+        <!-- 1. Custom Input Field Styling -->
+        <div class="section">
+            <h2>1. Custom Input Field Styling</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>Basic Input:</label>
+                        <input type="text" class="input-style" placeholder="Enter text">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Underline Input:</label>
+                        <input type="text" class="input-underline" placeholder="Underline style">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group icon-input">
+                        <label>Icon Input:</label>
+                        <span>👤</span>
+                        <input type="text" placeholder="Username">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>Email Input:</label>
+                        <input type="email" class="input-style" placeholder="email@example.com">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Password:</label>
+                        <input type="password" class="input-style" placeholder="Enter password">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Textarea:</label>
+                        <textarea class="input-style" rows="3" placeholder="Enter message"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 2. Focus States -->
+        <div class="section">
+            <h2>2. Focus States (Click on inputs)</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>Glow Focus:</label>
+                        <input type="text" class="input-style focus-glow" placeholder="Glow effect">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Scale Focus:</label>
+                        <input type="text" class="input-style focus-scale" placeholder="Scale effect">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Background Focus:</label>
+                        <input type="text" class="input-style focus-bg" placeholder="Background change">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 3. Styled Buttons and Dropdowns -->
+        <div class="section">
+            <h2>3. Styled Buttons & Dropdowns</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>Buttons:</label>
+                        <button class="btn btn-primary">Primary</button>
+                        <button class="btn btn-success">Success</button>
+                        <button class="btn btn-reset">Reset</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Dropdown:</label>
+                        <select class="styled-select">
+                            <option>Select Country</option>
+                            <option>Pakistan</option>
+                            <option>India</option>
+                            <option>USA</option>
+                            <option>UK</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Radio Buttons:</label>
+                        <div>
+                            <input type="radio" name="gender" id="male">
+                            <label for="male" style="display: inline;">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="gender" id="female">
+                            <label for="female" style="display: inline;">Female</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 4. Error State Styling -->
+        <div class="section">
+            <h2>4. Error States</h2>
+            
+            <div class="error-box">
+                <strong>Please fix the following errors:</strong>
+                <ul style="margin-left: 20px;">
+                    <li>Username is required</li>
+                    <li>Email is invalid</li>
+                    <li>Password must be 8+ characters</li>
+                </ul>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>Username (Error):</label>
+                        <input type="text" class="input-style input-error" value="user">
+                        <div class="error-msg">Username already taken</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Email (Error):</label>
+                        <input type="email" class="input-style input-error" value="invalid">
+                        <div class="error-msg">Invalid email format</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Password (Error):</label>
+                        <input type="password" class="input-style input-error" value="123">
+                        <div class="error-msg">Too short</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 5. Success Confirmation Styles -->
+        <div class="section">
+            <h2>5. Success Confirmation</h2>
+            
+            <div class="success-box">
+                <strong>✓ Registration Successful!</strong>
+                <p>Your account has been created. Welcome!</p>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>Username (Available):</label>
+                        <input type="text" class="input-style input-success" value="john_doe">
+                        <div class="success-msg">✓ Username available</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Email (Valid):</label>
+                        <input type="email" class="input-style input-success" value="john@example.com">
+                        <div class="success-msg">✓ Valid email</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="confirmation">
+                <h3>Thank You for Registering!</h3>
+                <p>A confirmation email has been sent to your inbox.</p>
+                <button class="btn btn-primary" style="margin-top: 10px;">Continue</button>
+            </div>
+        </div>
+        
+        <!-- Complete Registration Form -->
+        <div class="section">
+            <h2>Complete Registration Form</h2>
+            
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Full Name *</label>
+                            <input type="text" class="input-style" placeholder="Enter your full name">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" class="input-style" placeholder="email@example.com">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Password *</label>
+                            <input type="password" class="input-style" placeholder="Create password">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Confirm Password *</label>
+                            <input type="password" class="input-style" placeholder="Confirm password">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Country</label>
+                            <select class="styled-select">
+                                <option>Select Country</option>
+                                <option>Pakistan</option>
+                                <option>India</option>
+                                <option>USA</option>
+                                <option>UK</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div>
+                                <input type="radio" name="gender2" id="male2">
+                                <label for="male2" style="display: inline;">Male</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="gender2" id="female2">
+                                <label for="female2" style="display: inline;">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Message (Optional)</label>
+                    <textarea class="input-style" rows="3" placeholder="Tell us about yourself"></textarea>
+                </div>
+                
+                <hr>
+                
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="reset" class="btn btn-reset">Clear Form</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Summary -->
+        <div class="section">
+            <h2>Summary</h2>
+            <p>This page shows different form styling properties in CSS including:</p>
+            <ul style="margin-left: 30px;">
+                <li>Custom input field styling (basic, underline, icon)</li>
+                <li>Focus states (glow, scale, background)</li>
+                <li>Styled buttons (primary, success, reset)</li>
+                <li>Styled dropdowns and radio buttons</li>
+                <li>Error state styling with messages</li>
+                <li>Success confirmation styles</li>
+                <li>Complete registration form example</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

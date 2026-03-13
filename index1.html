@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Mastery Portfolio | 10 Task Showcase</title>
+    <style>
+        /* ====================================
+           CUSTOM CSS STYLING - PROFESSIONAL THEME
+           Consistent Color Scheme & Improved Typography
+           ==================================== */
+        
+        /* CSS Variables for Consistent Color Scheme */
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent-1: #ff6b6b;
+            --accent-2: #4ecdc4;
+            --accent-3: #fbbf24;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #718096;
+            --success: #48bb78;
+            --gradient-1: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-2: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            --gradient-3: linear-gradient(135deg, var(--primary), var(--accent-1), var(--accent-2));
+            --shadow-sm: 0 5px 15px rgba(0,0,0,0.1);
+            --shadow-md: 0 10px 30px rgba(0,0,0,0.15);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.2);
+            --shadow-glow: 0 0 30px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Improved Typography */
+        body {
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, var(--dark) 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* Container with enhanced background */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Enhanced Header with gradient text */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent-1), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 300% auto;
+            animation: gradientShift 8s ease infinite;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: var(--shadow-glow);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        /* Stats Section with enhanced design */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--gradient-1);
+            opacity: 0.1;
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-card:hover::before {
+            transform: rotate(45deg) translate(20%, 20%);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--gray);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Tasks Grid with enhanced cards */
+        .tasks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .task-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+        }
+
+        .task-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-header {
+            padding: 30px;
+            background: var(--gradient-1);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .task-card:hover .card-header::after {
+            opacity: 1;
+        }
+
+        .task-number {
+            font-size: 3rem;
+            font-weight: 900;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+        }
+
+        .card-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-header p {
+            font-size: 1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .features li {
+            padding: 8px 0;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gradient-1);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Tech Stack Section with enhanced images */
+        .tech-stack {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(5px);
+        }
+
+        .tech-stack h3 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+
+        .tech-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: float 3s ease infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .tech-item span {
+            display: block;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Footer with enhanced design */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--dark);
+            border-radius: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        footer p {
+            position: relative;
+            z-index: 1;
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            background: var(--gradient-1);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .tasks-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-icons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .tech-icons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+        }
+
+        /* Selection Style */
+        ::selection {
+            background: var(--primary);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>CSS MASTERY PORTFOLIO</h1>
+            <p class="subtitle">A comprehensive showcase of 10 advanced CSS tasks demonstrating modern web design techniques, animations, and responsive layouts.</p>
+        </header>
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Complete Tasks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">CSS Examples</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Animations</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Responsive</div>
+            </div>
+        </div>
+
+        <!-- Tasks Grid -->
+        <div class="tasks-grid">
+            <!-- Task 1: CSS Selectors Practice -->
+            <div class="task-card">
+                <div class="card-header">
+                    <div class="task-number">01</div>
+                    <h2>CSS Selectors</h2>
+                    <p>Mastering selector patterns</p>
+                </div>
+                <div class="card-body">
+                    <ul class="features">
+                        <li>5 Basic Selectors</li>
+                        <li>3 Attribute Selectors</li>
+                        <li>4 Combinators</li>
+                        <li>5 Pseudo-classes</li>
+                        <li>2 Pseudo-elements</li>
+                    </ul>
+                    <a href="selectors.html" class="btn btn-primary">View Demo</a>
+                </div>
+            </div>
+
+            <!-- Task 2: Typography Showcase -->
+            <div class="task-card">
+                <div class="card-header" style="background: var(--gradient-2);">
+                    <div class="task-number">02</div>
+                    <h2>Typography</h2>
+                    <p>Font styles & text effects</p>
+                </div>
+                <div class="card-body">
+                    <ul class="features">
+                        <li>3 Google Fonts</li>
+                        <li>Font Size Units</li>
+                        <li>Text Alignment</li>
+                        <li>Text Decoration</li>
+                        <li>Text Shadow</li>
+                    </ul>
+                    <a href="typography.html" class="btn btn-primary">View Demo</a>
+                </div>
+            </div>
+
+            <!-- Task 3: Background Gallery -->
+            <div class="task-card">
+                <div class="card-header" style="background: linear-gradient(135deg, var(--accent-1), var(--accent-2));">
+                    <div class="task-number">03</div>
+                    <h2>Background Gallery</h2>
+                    <p>Creative background effects</p>
+                </div>
+                <div class="card-body">
+                    <ul class="features">
+                        <li>Solid Colors</li>
+                        <li>Image Patterns</li>
+                        <li>Linear/Radial Gradients</li>
+                        <li>Multiple Layers</li>
+                        <li>Blend Modes</li>
+                    </ul>
+                    <a href="background-gallery.html" class="btn btn-primary">View Demo</a>
+                </div>
+            </div>
+
+            <!-- Task 4: Image Styling Portfolio -->
+            <div class="task-card">
+                <div class="card-header" style="background: linear-gradient(135deg, var(--accent-2), var(--accent-3));">
+                    <div class="task-number">04</div>
+                    <h2>Image Styling</h2>
+                    <p>Image effects & overlays</p>
+                </div>
+                <div class="card-body">
+                    <ul class="features">
+                        <li>Rounded Corners</li>
+                        <li>Borders & Shadows</li>
+                        <li>Hover Effects</li>
+                        <li>CSS Filters</li>
+                        <li>Image Overlays</li>
+                    </ul>
+                    <a href="image-portfolio.html" class="btn btn-primary">View Demo</a>
+                </div>
+            </div>
+
+            <!-- Task 5: Button Styling Collection -->
+            <div class="task-card">
+                <div class="card-header" style="background: linear-gradient(135deg, var(--accent-3), var(--accent-1));">
+                    <div class="task-number">05</div>
+                    <h2>Button Collection</h2>
+                    <p>Interactive button styles</p>
+                </div>
+                <div class="card-body">
+                    <ul class="features">
+                        <li>Different Sizes/Colors</li>
+                        <li>Hover & Focus States</li>
+                        <li>Transition Effects</li>
+                        <li>Shadows & Gradients</li>
+                        <li>Disabled States</li>
+                    </ul>
+                    <a href="buttons.html" class="btn btn-primary">View Demo</a>
+                </div>
+            </div>
+
+            <!-- Task 6: Form Styling -->
+            <div class="task-card">
+                <div class="card-header" style="background: linear-gradient(135deg, var(--secondary), var(--accent-2));">
+                    <div class="task-number">06</div>
+                    <h2>Form Styling</h2>
+                    <p>Beautiful form elements</p>
+                </div>
+                <div class="card-body">
+                    <ul class="features">
+                        <li>Custom Input Fields</li>
+                        <li>Focus States</li>
+                        <li>Styled Dropdowns</li>
+                        <li>Error States</li>
+                        <li>Success Confirmation</li>
+                    </ul>
+                    <a href="form.html" class="btn btn-primary">View Demo</a>
+                </div>
+            </div>
+
+            <!-- Task 7: Card Component Design -->
+            <div class="task-card">
+                <div class="card-header" style="background: linear-gradient(135deg, var(--primary), var(--accent-1));">
+                    <div class="task-number">07</div>
+                    <h2>Card Design</h2>
+                    <p>Modern card components</p>
+                </div>
+                <div class="card-body">
+                    <ul class="features">
+                        <li>Consistent Spacing</li>
+                        <li>Shadow Effects</li>
+                        <li>Hover Transformations</li>
+                        <li>Image & Text Content</li>
+                        <li>Call-to-Action Buttons</li>
+                    </ul>
+                    <a href="cards.html" class="btn btn-primary">View Demo</a>
+                </div>
+            </div>
+
+            <!-- Task 8: Navigation Menu Styling -->
+            <div class="task-card">
+                <div class="card-header" style="background: linear-gradient(135deg, var(--secondary), var(--accent-3));">
+                    <div class="task-number">08</div>
+                    <h2>Navigation</h2>
+                    <p>Menu & dropdown styles</p>
+                </div>
+                <div class="card-body">
+                    <ul class="features">
+                        <li>Horizontal/Vertical</li>
+                        <li>Hover & Active States</li>
+                        <li>Dropdown Menus</li>
+                        <li>Responsive Design</li>
+                        <li>Transition Effects</li>
+                    </ul>
+                    <a href="navigation.html" class="btn btn-primary">View Demo</a>
+                </div>
+            </div>
+
+            <!-- Task 9: CSS Transform Gallery -->
+            <div class="task-card">
+                <div class="card-header" style="background: linear-gradient(135deg, var(--accent-1), var(--secondary));">
+                    <div class="task-number">09</div>
+                    <h2>Transform Gallery</h2>
+                    <p>2D & 3D transformations</p>
+                </div>
+                <div class="card-body">
+                    <ul class="features">
+                        <li>Rotation & Scaling</li>
+                        <li>Translation</li>
+                        <li>3D Effects</li>
+                        <li>Transform Origin</li>
+                        <li>Combined Transforms</li>
+                    </ul>
+                    <a href="transforms.html" class="btn btn-primary">View Demo</a>
+                </div>
+            </div>
+
+            <!-- Task 10: Advanced Effects -->
+            <div class="task-card">
+                <div class="card-header" style="background: linear-gradient(135deg, var(--accent-2), var(--primary));">
+                    <div class="task-number">10</div>
+                    <h2>Advanced Effects</h2>
+                    <p>Cutting-edge CSS features</p>
+                </div>
+                <div class="card-body">
+                    <ul class="features">
+                        <li>Gradient Text</li>
+                        <li>Custom Checkboxes</li>
+                        <li>Loading Animations</li>
+                        <li>Text Clipping</li>
+                        <li>Complex Shadows</li>
+                    </ul>
+                    <a href="advanced-effects.html" class="btn btn-primary">View Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack Section -->
+        <div class="tech-stack">
+            <h3>⚡ Technologies Used</h3>
+            <div class="tech-icons">
+                <div class="tech-item">
+                    <span class="tech-icon">🌐</span>
+                    <span>HTML5</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-icon">🎨</span>
+                    <span>CSS3</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-icon">🔄</span>
+                    <span>Flexbox</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-icon">📐</span>
+                    <span>Grid</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-icon">✨</span>
+                    <span>Animations</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-icon">📱</span>
+                    <span>Responsive</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 CSS Mastery Portfolio | 10 Advanced CSS Tasks Showcase</p>
+            <p>Designed & Developed with ❤️ using Modern CSS Techniques</p>
+            <div class="footer-links">
+                <a href="#">Top</a>
+                <a href="#">GitHub</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

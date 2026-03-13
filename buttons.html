@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Styling Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #9370db;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        .main-box {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .section h2 {
+            margin-bottom: 20px;
+            color: #444;
+        }
+        
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        /* 1. Different Sizes */
+        .btn-xs {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+        
+        .btn-md {
+            padding: 12px 24px;
+            font-size: 16px;
+        }
+        
+        .btn-lg {
+            padding: 15px 30px;
+            font-size: 18px;
+        }
+        
+        .btn-xl {
+            padding: 20px 40px;
+            font-size: 22px;
+        }
+        
+        .btn-full {
+            width: 100%;
+            padding: 12px;
+        }
+        
+        /* 2. Different Colors */
+        .btn-blue {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .btn-green {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .btn-red {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .btn-yellow {
+            background-color: #f1c40f;
+            color: black;
+        }
+        
+        .btn-purple {
+            background-color: #9b59b6;
+            color: white;
+        }
+        
+        .btn-gray {
+            background-color: #95a5a6;
+            color: white;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: #3498db;
+            border: 2px solid #3498db;
+        }
+        
+        /* 3. Different Shapes */
+        .btn-square {
+            border-radius: 0;
+        }
+        
+        .btn-rounded {
+            border-radius: 8px;
+        }
+        
+        .btn-pill {
+            border-radius: 50px;
+        }
+        
+        .btn-circle {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            padding: 0;
+        }
+        
+        .btn-circle-lg {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            padding: 0;
+        }
+        
+        /* 4. Hover and Focus States */
+        .btn-hover-dark:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-hover-scale:hover {
+            transform: scale(1.1);
+        }
+        
+        .btn-hover-float:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-hover-glow:hover {
+            box-shadow: 0 0 15px #3498db;
+        }
+        
+        .btn-hover-border:hover {
+            background-color: transparent;
+            border: 2px solid #3498db;
+            color: #3498db;
+        }
+        
+        .btn:focus {
+            outline: 2px solid red;
+        }
+        
+        /* 5. Transition Effects */
+        .btn-trans-fast {
+            transition: all 0.1s;
+        }
+        
+        .btn-trans-slow {
+            transition: all 0.8s;
+        }
+        
+        .btn-trans-bounce {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        /* 6. Shadow Backgrounds */
+        .btn-shadow-soft {
+            box-shadow: 0 4px 8px gray;
+        }
+        
+        .btn-shadow-hard {
+            box-shadow: 4px 4px 0 black;
+        }
+        
+        .btn-shadow-multi {
+            box-shadow: 3px 3px 0 blue, 6px 6px 0 green, 9px 9px 0 red;
+        }
+        
+        .btn-shadow-inner {
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .btn-shadow-glow {
+            box-shadow: 0 0 20px #3498db;
+        }
+        
+        /* 7. Gradient Backgrounds */
+        .btn-gradient1 {
+            background: linear-gradient(red, yellow);
+            color: black;
+        }
+        
+        .btn-gradient2 {
+            background: linear-gradient(to right, blue, green);
+            color: white;
+        }
+        
+        .btn-gradient3 {
+            background: linear-gradient(45deg, purple, pink);
+            color: white;
+        }
+        
+        .btn-gradient4 {
+            background: radial-gradient(red, orange);
+            color: white;
+        }
+        
+        .btn-gradient5 {
+            background: linear-gradient(red, orange, yellow, green, blue);
+            color: white;
+        }
+        
+        /* 8. Disabled State Styling */
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .btn-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background-color: #ccc;
+            color: #666;
+        }
+        
+        .btn-disabled-pattern {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #999 10px, #999 20px);
+            color: #333;
+        }
+        
+        .item {
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .caption {
+            margin-top: 8px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-box">
+        <h1>Button Styling Collection</h1>
+        
+        <!-- 1. Different Sizes -->
+        <div class="section">
+            <h2>1. Different Sizes</h2>
+            <div class="button-row">
+                <div class="item">
+                    <button class="btn btn-blue btn-xs">Extra Small</button>
+                    <p class="caption">.btn-xs</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-sm">Small</button>
+                    <p class="caption">.btn-sm</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-md">Medium</button>
+                    <p class="caption">.btn-md</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-lg">Large</button>
+                    <p class="caption">.btn-lg</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-xl">Extra Large</button>
+                    <p class="caption">.btn-xl</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-full">Full Width</button>
+                    <p class="caption">.btn-full</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 2. Different Colors -->
+        <div class="section">
+            <h2>2. Different Colors</h2>
+            <div class="button-row">
+                <div class="item">
+                    <button class="btn btn-blue">Blue</button>
+                    <p class="caption">.btn-blue</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-green">Green</button>
+                    <p class="caption">.btn-green</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-red">Red</button>
+                    <p class="caption">.btn-red</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-yellow">Yellow</button>
+                    <p class="caption">.btn-yellow</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-purple">Purple</button>
+                    <p class="caption">.btn-purple</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-gray">Gray</button>
+                    <p class="caption">.btn-gray</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-outline">Outline</button>
+                    <p class="caption">.btn-outline</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 3. Different Shapes -->
+        <div class="section">
+            <h2>3. Different Shapes</h2>
+            <div class="button-row">
+                <div class="item">
+                    <button class="btn btn-blue btn-square">Square</button>
+                    <p class="caption">Square</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-rounded">Rounded</button>
+                    <p class="caption">Rounded</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-pill">Pill</button>
+                    <p class="caption">Pill</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-circle">C</button>
+                    <p class="caption">Circle</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-circle-lg">L</button>
+                    <p class="caption">Large Circle</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 4. Hover and Focus States -->
+        <div class="section">
+            <h2>4. Hover & Focus States (Hover over buttons)</h2>
+            <div class="button-row">
+                <div class="item">
+                    <button class="btn btn-blue btn-hover-dark">Darken</button>
+                    <p class="caption">Hover: darken</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-hover-scale">Scale</button>
+                    <p class="caption">Hover: scale</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-hover-float">Float</button>
+                    <p class="caption">Hover: float</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-hover-glow">Glow</button>
+                    <p class="caption">Hover: glow</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-outline btn-hover-border">Border</button>
+                    <p class="caption">Hover: border</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue">Focus Me</button>
+                    <p class="caption">Click/Tab to focus</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 5. Transition Effects -->
+        <div class="section">
+            <h2>5. Transition Effects</h2>
+            <div class="button-row">
+                <div class="item">
+                    <button class="btn btn-blue btn-trans-fast">Fast (0.1s)</button>
+                    <p class="caption">Fast transition</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-trans-slow">Slow (0.8s)</button>
+                    <p class="caption">Slow transition</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-trans-bounce">Bounce</button>
+                    <p class="caption">Bounce effect</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 6. Shadow Backgrounds -->
+        <div class="section">
+            <h2>6. Shadow Effects</h2>
+            <div class="button-row">
+                <div class="item">
+                    <button class="btn btn-blue btn-shadow-soft">Soft</button>
+                    <p class="caption">Soft shadow</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-shadow-hard">Hard</button>
+                    <p class="caption">Hard shadow</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-shadow-multi">Multi</button>
+                    <p class="caption">Multiple shadows</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-shadow-inner">Inner</button>
+                    <p class="caption">Inner shadow</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-blue btn-shadow-glow">Glow</button>
+                    <p class="caption">Glow</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 7. Gradient Backgrounds -->
+        <div class="section">
+            <h2>7. Gradient Backgrounds</h2>
+            <div class="button-row">
+                <div class="item">
+                    <button class="btn btn-gradient1">Grad 1</button>
+                    <p class="caption">Red to Yellow</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-gradient2">Grad 2</button>
+                    <p class="caption">Blue to Green</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-gradient3">Grad 3</button>
+                    <p class="caption">45deg Purple-Pink</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-gradient4">Grad 4</button>
+                    <p class="caption">Radial</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-gradient5">Grad 5</button>
+                    <p class="caption">Rainbow</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 8. Disabled State Styling -->
+        <div class="section">
+            <h2>8. Disabled States</h2>
+            <div class="button-row">
+                <div class="item">
+                    <button class="btn btn-blue" disabled>Disabled</button>
+                    <p class="caption">:disabled</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-disabled">Disabled 1</button>
+                    <p class="caption">.btn-disabled</p>
+                </div>
+                <div class="item">
+                    <button class="btn btn-disabled-pattern">Disabled 2</button>
+                    <p class="caption">Pattern</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Summary -->
+        <div class="section">
+            <h2>Summary</h2>
+            <p>This page shows different button styling properties in CSS including:</p>
+            <ul style="margin-left: 30px;">
+                <li>5 different sizes (xs, sm, md, lg, xl, full)</li>
+                <li>7 different colors + outline</li>
+                <li>5 different shapes (square, rounded, pill, circle)</li>
+                <li>5 hover effects + focus state</li>
+                <li>3 transition effects</li>
+                <li>5 shadow effects</li>
+                <li>5 gradient backgrounds</li>
+                <li>3 disabled states</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
